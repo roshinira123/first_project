@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://char.gd" type="Script" id=1]
+[ext_resource path="res://Naruto_character copy 2.png" type="Texture" id=2]
+[ext_resource path="res://enemy.gd" type="Script" id=3]
+[ext_resource path="res://Royalty-Free-Game-Art-Tiny-Army-Soldier-Featured-3.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.8, 32.8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22.8, 37 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 298, 233 )
+
+[node name="naruto" type="KinematicBody2D" parent="."]
+position = Vector2( 258, 83 )
+scale = Vector2( 1.96318, 1.83179 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="naruto"]
+position = Vector2( 2.00003, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="naruto"]
+position = Vector2( 2.59998, 0.0999756 )
+scale = Vector2( 0.378166, 0.347917 )
+texture = ExtResource( 2 )
+
+[node name="enemy" type="KinematicBody2D" parent="."]
+position = Vector2( -251, 91.8 )
+scale = Vector2( 2.03855, 1.81281 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="enemy"]
+position = Vector2( -1.5, -1.49988 )
+scale = Vector2( 0.235, 0.226 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
+position = Vector2( -1, 1 )
+shape = SubResource( 2 )
